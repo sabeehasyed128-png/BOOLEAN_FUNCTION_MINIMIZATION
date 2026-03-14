@@ -39,30 +39,31 @@ Developed by: SABEEHA PARVEEN K
 RegisterNumber: 212225230233
 
 ```
-i)
-module boolean(a,b,c,d,f1);
-input a,b,c,d;
-output f1;
-assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
-endmodule
-
-ii)
-module bool(w,x,y,z,f2);
-input w,x,y,z;
-output f2;
-assign f2=((~y & z)|( w & y )|(x & y));
+module exp2(A,B,C,D,W,X,Y,Z,F1,F2);
+input A,B,C,D,W,X,Y,Z;
+wire x1,x2,x3,x4,x5,x6,x7,x8,x9,x10; 
+output F1,F2;
+assign x1=(~A)&(~B)&(~C)&(~D);
+assign x2=(A)&(~C)&(~D);
+assign x3=(~B)&(C)&(~D); 
+assign x4=(~A)&(B)&(C)&(D);
+assign x5=(B)&(~C)&(D);
+assign x6=(X)&(~Y)&(Z);
+assign x7=(~X)&(~Y)&(Z);
+assign x8=(~W)&(X)&(Y);
+assign x9=(W)&(~X)&(Y);
+assign x10=(W)&(X)&(Y);
+assign F1=x1|x2|x3|x4|x5;
+assign F2=x6|x7|x8|x9|x10;
 endmodule
 ```
 
 **RTL realization**
 ![alt text](EX2.1.png)
-![alt text](EX2.2.png)
 
 **Output:**
-**RTL**
-![alt text](EX2.3.png)
-![alt text](EX2.4.png)
 **Timing Diagram**
+![alt text](EX2.2.png)
 
 **Result:**
 
