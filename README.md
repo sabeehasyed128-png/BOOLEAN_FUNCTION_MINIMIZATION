@@ -33,37 +33,36 @@ Hardware – PCs, Cyclone II , USB flasher
 
 **Program:**
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
 
 Developed by: SABEEHA PARVEEN K  
 RegisterNumber: 212225230233
-module boolean(A,B,C,D,W,X,Y,Z,F1,F2); 
-input A,B,C,D,W,X,Y,Z; 
-wire x1,x2,x3,x4,x5,x6,x7,x8,x9,x10; 
-output F1,F2; 
-assign x1=(~A)&(~B)&(~C)&(~D);
-assign x2=(A)&(~C)&(~D);
-assign x3=(~B)&(C)&(~D);
-assign x4=(~A)&(B)&(C)&(D);
-assign x5=(B)&(~C)&(D);
-assign x6=(X)&(~Y)&(Z);
-assign x7=(~X)&(~Y)&(Z);
-assign x8=(~W)&(X)&(Y); 
-assign x9=(W)&(~X)&(Y);
-assign x10=(W)&(X)&(Y); 
-assign F1=x1|x2|x3|x4|x5;
-assign F2=x6|x7|x8|x9|x10;
+
+```
+i)
+module boolean(a,b,c,d,f1);
+input a,b,c,d;
+output f1;
+assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
 endmodule
 
+ii)
+module bool(w,x,y,z,f2);
+input w,x,y,z;
+output f2;
+assign f2=((~y & z)|( w & y )|(x & y));
+endmodule
+```
+
 **RTL realization**
-<img width="1048" height="592" alt="EX 2 1" src="https://github.com/user-attachments/assets/d829be8e-43a1-4bc2-8062-16f96dd643fd" />
+![alt text](EX2.1.png)
+![alt text](EX2.2.png)
 
 **Output:**
-
 **RTL**
-
+![alt text](EX2.3.png)
+![alt text](EX2.4.png)
 **Timing Diagram**
-<img width="1051" height="591" alt="EX 2 2" src="https://github.com/user-attachments/assets/01a0b3d4-7609-4aca-b72e-f6acd5e2c1f5" />
 
 **Result:**
 
